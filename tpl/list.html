@@ -1,0 +1,166 @@
+<load target="js/common.js" />
+<load target="filter/insert_multidomain.xml" />
+<load target="filter/delete_multidomain.xml" />
+<!--@if($order_type == "desc")-->
+	{@ $order_type = "asc"; }
+<!--@else-->
+	{@ $order_type = "desc"; }
+<!--@end-->
+
+<div class="x_page-header">
+	<h1>
+		{$lang->multidomain}
+		<a href="#aboutPage" class="x_icon-question-sign" data-toggle>&nbsp;</a>
+	</h1>
+</div>
+<p id="aboutPage" class="x_help-block" hidden>{nl2br($lang->md_about)}</p>
+<ul class="x_nav x_nav-tabs">
+	<li class="x_active"><a href="{getUrl('', 'module', 'admin', 'act','dispMultidomainAdminSetup')}">{$lang->cmd_setup}</a></li>
+</ul>
+
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == ''" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+
+<section class="section">
+	<h1>{$lang->subtitle_primary}</h1>
+	<table id="boardList" class="x_table x_table-striped x_table-hover">
+		<caption>
+			<strong>Total: {number_format($total_count)}, Page: {number_format($page)}/{number_format($total_page)}</strong>
+		</caption>
+		<thead>
+			<tr>
+				<th scope="col"><a href="{getUrl('sort_index', 'multidomain_srl', 'order_type', $order_type)}">{$lang->no}</a></th>
+				<th scope="col"><a href="{getUrl('sort_index', 'domain', 'order_type', $order_type)}">{$lang->md_domain}</a></th>
+				<th scope="col"><a href="{getUrl('sort_index', 'module_srl', 'order_type', $order_type)}">{$lang->mid}</a></th>
+				<th scope="col"><a href="{getUrl('sort_index', 'regdate', 'order_type', $order_type)}">{$lang->regdate}</a></th>
+				<th scope="col">{$lang->cmd_edit}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="md_srl_{$val->multidomain_srl}" loop="$multidomain_list => $no,$val">
+				<td>{$no}</td>
+				<td class="domain">{$val->domain}</td>
+				<td id="module_srl_{$val->module_srl}"><a href="{getUrl('', 'mid', $val->mid)}" target="_blank">{$val->mid}({$val->browser_title})</a></td>
+				<td>{zdate($val->regdate,"Y-m-d")}</td>
+				<td>
+					<a class="modalAnchor _multidomain_update" href="#multidomain_insert" title="{$lang->cmd_setup}">{$lang->cmd_setup}</a>
+					<a class="modalAnchor _multidomain_delete" href="#multidomain_delete">{$lang->cmd_delete}</a>
+				</td>
+			</tr>
+			<tr cond="!$multidomain_list">
+				<td>{$lang->md_no_domain}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="x_clearfix">
+		<form cond="$page_navigation" action="./" class="x_pagination x_pull-left" no-error-return-url="true" style="margin-top:0">
+			<input type="hidden" name="module" value="admin" />
+			<input type="hidden" name="act" value="dispMultidomainAdminSetup" />
+			<ul>
+				<li class="x_disabled"|cond="!$page || $page == 1"><a href="{getUrl('page', '')}">&laquo; {$lang->first_page}</a></li>
+				<block cond="$page_navigation->first_page != 1 && $page_navigation->first_page + $page_navigation->page_count > $page_navigation->last_page - 1 && $page_navigation->page_count != $page_navigation->total_page">
+				{@$isGoTo = true}
+				<li>
+					<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+					<span cond="$isGoTo" id="goTo" class="x_input-append">
+						<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+						<button type="submit" class="x_add-on">Go</button>
+					</span>
+				</li>
+				</block>
+				<!--@while($page_no = $page_navigation->getNextPage())-->
+				{@$last_page = $page_no}
+				<li class="x_active"|cond="$page_no == $page"><a  href="{getUrl('page', $page_no)}">{$page_no}</a></li>
+				<!--@end-->
+				<block cond="$last_page != $page_navigation->last_page && $last_page + 1 != $page_navigation->last_page">
+				{@$isGoTo = true}
+				<li>
+					<a href="#goTo" data-toggle title="{$lang->cmd_go_to_page}">&hellip;</a>
+					<span cond="$isGoTo" id="goTo" class="x_input-append">
+						<input type="number" min="1" max="{$page_navigation->last_page}" required name="page" title="{$lang->cmd_go_to_page}" />
+						<button type="submit" class="x_add-on">Go</button>
+					</span>
+				</li>
+				</block>
+				<li class="x_disabled"|cond="$page == $page_navigation->last_page"><a href="{getUrl('page', $page_navigation->last_page)}" title="{$page_navigation->last_page}">{$lang->last_page} &raquo;</a></li>
+			</ul>
+		</form>
+	
+		<span class="x_pull-right x_btn-group">
+			<a class="x_btn modalAnchor _multidomain_insert" href="#multidomain_insert">{$lang->cmd_insert}</a>
+		</span>
+	</div>
+	
+</section>
+
+<section class="section">
+	<h1>{$lang->cmd_setup}</h1>
+	<p>{$lang->md_about_setup}</p>
+	<div cond="$default_url" class="message x_alert-error">
+		<p>{$lang->md_failure_defaultUrl}</p>
+	</div>
+	<div cond="!$default_url" class="message x_alert-success">
+		<p>{$lang->md_good}</p>
+	</div>
+</section>
+
+<div id="multidomain_insert" class="modal">
+	<div class="fg">
+		<form class="x_form-horizontal" action="./" method="post" onsubmit="return procFilter(this, insert_multidomain)" enctype="multipart/form-data">
+			<input type="hidden" name="multidomain_srl" value="{$multidomain_srl}" />
+			<h1>{$lang->md_insert}</h1>
+			<div cond="$logged_info->is_admin == 'Y'" class="x_control-group">
+				<label class="x_control-label" for="domain">{$lang->md_domain}</label>
+				<div class="x_controls">
+					<input type="url" name="domain" id="domain" value="" />
+					<a href="#domain_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+					<p id="domain_help" class="x_help-block" hidden>{$lang->md_about_domain}</p>
+				</div>
+			</div>
+			<div class="x_control-group">
+				<label class="x_control-label" for="_target_module">{$lang->md_module}</label>
+				<div class="x_controls">
+					<input class="module_search" type="text" name="index_module_srl" value="" />
+					<a href="#module_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+					<p id="module_help" class="x_help-block" hidden>{$lang->md_about_module}</p>
+				</div>
+			</div>
+			<div class="x_clearfix btnArea">
+				<div class="x_pull-left">
+					<button type="button" class="x_btn" data-hide="#multidomain_insert">{$lang->cmd_close}</button>
+				</div>
+				<div class="x_pull-right">
+					<button class="x_btn x_btn-primary" type="submit">{$lang->cmd_registration}</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="multidomain_delete" class="modal" cond="$multidomain_list">
+	<div class="fg">
+		<form class="x_form-horizontal" action="./" method="post" onsubmit="return procFilter(this, delete_multidomain)" enctype="multipart/form-data">
+			<input type="hidden" name="page" value="{$page}" />
+			<input type="hidden" name="multidomain_srl" value="{$multidomain_srl}" />
+			<h1>{$lang->confirm_delete}</h1>
+			<div class="x_control-group">
+				<label class="x_control-label" for="domain">{$lang->md_domain}</label>
+				<div class="x_controls domain"></div>
+			</div>
+			<div class="x_control-group">
+				<label class="x_control-label" for="_target_module">{$lang->md_module}</label>
+				<div class="x_controls module"></div>
+			</div>
+			<div class="x_clearfix btnArea">
+				<div class="x_pull-left">
+					<button type="button" class="x_btn" data-hide="#multidomain_delete">{$lang->cmd_cancel}</button>
+				</div>
+				<div class="x_pull-right">
+					<button class="x_btn x_btn-danger" type="submit">{$lang->cmd_delete}</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

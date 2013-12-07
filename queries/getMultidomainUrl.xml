@@ -1,0 +1,15 @@
+<query id="getMultidomainUrl" action="select">
+	<tables>
+		<table name="modules" alias="modules" />
+		<table name="multidomain" alias="multidomain" />
+	</tables>
+	<columns>
+		<column name="modules.mid" alias="mid" />
+		<column name="multidomain.domain" alias="domain" />
+		<column name="multidomain.document_srl" alias="document_srl" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="modules.module_srl" default="multidomain.module_srl" filter="number" notnull="notnull" pipe="where" />
+		<condition operation="equal" column="multidomain.domain" var="domain" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

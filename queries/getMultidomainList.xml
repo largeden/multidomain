@@ -1,0 +1,21 @@
+<query id="getMultidomainList" action="select">
+	<tables>
+		<table name="multidomain" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="doamin" var="doamin" pipe="where" />
+		<condition operation="equal" column="module_srl" var="module_srl" filter="number" pipe="and" />
+		<group pipe="and">
+			<condition operation="like" column="doamin" var="s_doamin" pipe="or" />
+		</group>
+	</conditions>
+	<navigation>
+		<index var="sort_index" default="multidomain_srl" order="order_type" />
+		<list_count var="list_count" default="20" />
+		<page_count var="page_count" default="10" />
+		<page var="page" default="1" />
+	</navigation>
+</query>

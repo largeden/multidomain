@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions>
+		<permission action="procMultidomainAdminInsert" target="manager" />
+		<permission action="procMultidomainAdminDelete" target="manager" />
+	</permissions>
+	<actions>
+		<action name="dispMultidomainAdminSetup" type="view" admin_index="true" menu_name="multidomain" menu_index="true" />
+		<action name="procMultidomainAdminInsert" type="controller" ruleset="insertMultidomain" />
+		<action name="procMultidomainAdminDelete" type="controller" ruleset="deleteMultidomain" />
+	</actions>
+	<menus>
+		<menu name="multidomain" type="all">
+			<title xml:lang="en">multi domain</title>
+			<title xml:lang="ko">멀티 도메인</title>
+			<title xml:lang="zh-CN">multi domain</title>
+			<title xml:lang="jp">マルチドメイン</title>
+			<title xml:lang="es">multi domain</title>
+			<title xml:lang="ru">multi domain</title>
+			<title xml:lang="fr">multi domain</title>
+			<title xml:lang="zh-TW">multi domain</title>
+			<title xml:lang="vi">multi domain</title>
+			<title xml:lang="mn">multi domain</title>
+			<title xml:lang="tr">multi domain</title>
+		</menu>
+	</menus>
+</module>

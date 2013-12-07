@@ -1,0 +1,12 @@
+<query id="getMultidomain" action="select">
+	<tables>
+		<table name="multidomain" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="notequal" column="multidomain_srl" var="multidomain_srl" filter="number" pipe="where" />
+		<condition operation="equal" column="domain" var="domain" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

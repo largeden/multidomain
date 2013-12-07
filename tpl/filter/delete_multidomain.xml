@@ -1,0 +1,10 @@
+<filter name="delete_multidomain" module="multidomain" act="procMultidomainAdminDelete">
+	<form>
+		<node target="multidomain_srl" required="true" filter="number" />
+	</form>
+	<parameter />
+	<response callback_func="md_complete">
+		<tag name="error" />
+		<tag name="message" />
+	</response>
+</filter>

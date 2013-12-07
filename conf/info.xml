@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="en">multi domain</title>
+	<title xml:lang="ko">멀티 도메인</title>
+	<title xml:lang="zh-CN">multi domain</title>
+	<title xml:lang="jp">マルチドメイン</title>
+	<title xml:lang="es">multi domain</title>
+	<title xml:lang="ru">multi domain</title>
+	<title xml:lang="fr">multi domain</title>
+	<title xml:lang="zh-TW">multi domain</title>
+	<title xml:lang="vi">multi domain</title>
+	<title xml:lang="mn">multi domain</title>
+	<title xml:lang="tr">multi domain</title>
+	<description xml:lang="en">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="ko">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="zh-CN">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="jp">複数のドメインを一つのモジュール（mid）に、或は指定モジュールへアクセスできるよう支援します。</description>
+	<description xml:lang="es">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="ru">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="fr">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="zh-TW">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="vi">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="mn">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<description xml:lang="tr">여러 도메인을 하나의 모듈(mid) 혹은 지정 모듈로 접속이 가능하도록 지원해줍니다.</description>
+	<version>1.3</version>
+	<date>2013-12-08</date>
+	<category>accessory</category>
+
+	<author email_address="cbrghost@gmail.com" link="http://www.animeclub.net/">
+		<name xml:lang="en">largeden</name>
+		<name xml:lang="ko">라르게덴</name>
+		<name xml:lang="zh-CN">largeden</name>
+		<name xml:lang="jp">ラルゲデン</name>
+		<name xml:lang="es">largeden</name>
+		<name xml:lang="ru">largeden</name>
+		<name xml:lang="fr">largeden</name>
+		<name xml:lang="zh-TW">largeden</name>
+		<name xml:lang="vi">largeden</name>
+		<name xml:lang="mn">largeden</name>
+		<name xml:lang="tr">largeden</name>
+	</author>
+
+	<history version="1.3" date="2013-12-08"> 
+		<author email_address="cbrghost@gmail.com" link="http://www.animeclub.net">
+			<name xml:lang="en">largeden</name>
+			<name xml:lang="ko">라르게덴</name>
+			<name xml:lang="zh-CN">largeden</name>
+			<name xml:lang="jp">ラルゲデン</name>
+			<name xml:lang="es">largeden</name>
+			<name xml:lang="ru">largeden</name>
+			<name xml:lang="fr">largeden</name>
+			<name xml:lang="zh-TW">largeden</name>
+			<name xml:lang="vi">largeden</name>
+			<name xml:lang="mn">largeden</name>
+			<name xml:lang="tr">largeden</name>
+		</author>
+		<log xml:lang="en">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="ko">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="zh-CN">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="jp">単一モヂュール（マルチドメインアドオンなし）で動作するように処理</log>
+		<log xml:lang="es">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="ru">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="fr">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="zh-TW">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="vi">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="mn">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+		<log xml:lang="tr">단일 모듈(멀티도메인 애드온 없이)로 동작하도록 처리</log>
+	</history>
+	<history version="1.2" date="2013-08-23"> 
+		<author email_address="cbrghost@gmail.com" link="http://www.animeclub.net">
+			<name xml:lang="en">largeden</name>
+			<name xml:lang="ko">라르게덴</name>
+			<name xml:lang="zh-CN">largeden</name>
+			<name xml:lang="jp">ラルゲデン</name>
+			<name xml:lang="es">largeden</name>
+			<name xml:lang="ru">largeden</name>
+			<name xml:lang="fr">largeden</name>
+			<name xml:lang="zh-TW">largeden</name>
+			<name xml:lang="vi">largeden</name>
+			<name xml:lang="mn">largeden</name>
+			<name xml:lang="tr">largeden</name>
+		</author>
+		<log xml:lang="en">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="ko">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="zh-CN">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="jp">Form Return処理にドメイン名まで入力された場合、接続できない状態を回避する機能追加</log>
+		<log xml:lang="es">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="ru">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="fr">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="zh-TW">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="vi">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="mn">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+		<log xml:lang="tr">Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가</log>
+	</history>
+	<history version="1.1.1" date="2013-05-15"> 
+		<author email_address="cbrghost@gmail.com" link="http://www.animeclub.net">
+			<name xml:lang="en">largeden</name>
+			<name xml:lang="ko">라르게덴</name>
+			<name xml:lang="zh-CN">largeden</name>
+			<name xml:lang="jp">ラルゲデン</name>
+			<name xml:lang="es">largeden</name>
+			<name xml:lang="ru">largeden</name>
+			<name xml:lang="fr">largeden</name>
+			<name xml:lang="zh-TW">largeden</name>
+			<name xml:lang="vi">largeden</name>
+			<name xml:lang="mn">largeden</name>
+			<name xml:lang="tr">largeden</name>
+		</author>
+		<log xml:lang="en">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="ko">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="zh-CN">언어팩추가(일본어), 오류 수정</log>
+		<log xml:lang="jp">言語パック追加（日本語）、その他エーラ修正</log>
+		<log xml:lang="es">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="ru">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="fr">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="zh-TW">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="vi">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="mn">언어팩추가(일본어), 기타 오류 수정</log>
+		<log xml:lang="tr">언어팩추가(일본어), 기타 오류 수정</log>
+	</history>
+</module>

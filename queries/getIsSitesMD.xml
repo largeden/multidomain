@@ -1,0 +1,12 @@
+<query id="getIsSitesMD" action="select">
+	<tables>
+		<table name="sites" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="excess" column="site_srl" default="0" filter="number" pipe="where" />
+		<condition operation="like_prefix" column="domain" var="domain" notnull="notnull" pipe="and" />
+	</conditions>
+</query>
