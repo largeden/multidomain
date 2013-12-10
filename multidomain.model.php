@@ -46,7 +46,7 @@ class multidomainModel extends multidomain
 		// 문서번호가 존재하면 document_srl를 변경함
 		if($multidomain->document_srl > 0)
 		{
-			$this->document_srl = $multidomain->document_srl;
+			$module_info->document_srl = $multidomain->document_srl;
 			Context::set('document_srl', $multidomain->document_srl);
 		}
 	}
@@ -63,7 +63,7 @@ class multidomainModel extends multidomain
 		}
 
 		$args = new stdClass();
-		$args->domain = $this->parseUri($_SERVER["HTTP_REFERER"]);
+		$args->domain = $this->parseUri(Context::get('request_uri'));
 		$multidomain_info = $this->getMultidomain($args);
 
 		$this->defaultUrl($multidomain_info->domain);
