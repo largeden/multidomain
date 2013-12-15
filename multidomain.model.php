@@ -5,7 +5,7 @@
  * multidomain model class of multidomain module
  * @author largeden (cbrghost@gmail.com)
  * @package /modules/multidomain
- * @version 1.3
+ * @version 1.3.1
  */
 class multidomainModel extends multidomain
 {
