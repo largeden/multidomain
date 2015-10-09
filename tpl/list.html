@@ -33,6 +33,7 @@
 				<th scope="col"><a href="{getUrl('sort_index', 'multidomain_srl', 'order_type', $order_type)}">{$lang->no}</a></th>
 				<th scope="col"><a href="{getUrl('sort_index', 'domain', 'order_type', $order_type)}">{$lang->md_domain}</a></th>
 				<th scope="col"><a href="{getUrl('sort_index', 'module_srl', 'order_type', $order_type)}">{$lang->mid}</a></th>
+				<th scope="col"><a href="{getUrl('sort_index', 'document_srl', 'order_type', $order_type)}">{$lang->document_srl}</a></th>
 				<th scope="col"><a href="{getUrl('sort_index', 'regdate', 'order_type', $order_type)}">{$lang->regdate}</a></th>
 				<th scope="col">{$lang->cmd_edit}</th>
 			</tr>
@@ -40,8 +41,10 @@
 		<tbody>
 			<tr id="md_srl_{$val->multidomain_srl}" loop="$multidomain_list => $no,$val">
 				<td>{$no}</td>
+				{debugPrint($val)}
 				<td class="domain">{$val->domain}</td>
 				<td id="module_srl_{$val->module_srl}"><a href="{getUrl('', 'mid', $val->mid)}" target="_blank">{$val->mid}({$val->browser_title})</a></td>
+				<td id="document_srl_{$val->document_srl}"><a href="{getUrl('', 'mid', $val->mid, 'document_srl', $val->document_srl)}" target="_blank">{$val->document_srl}</a></td>
 				<td>{zdate($val->regdate,"Y-m-d")}</td>
 				<td>
 					<a class="modalAnchor _multidomain_update" href="#multidomain_insert" title="{$lang->cmd_setup}">{$lang->cmd_setup}</a>
@@ -125,6 +128,14 @@
 					<input class="module_search" type="text" name="index_module_srl" value="" />
 					<a href="#module_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
 					<p id="module_help" class="x_help-block" hidden>{$lang->md_about_module}</p>
+				</div>
+			</div>
+			<div class="x_control-group">
+				<label class="x_control-label" for="_target_document_srl">{$lang->md_document}</label>
+				<div class="x_controls">
+					<input type="number" name="index_document_srl" value="" style="width:200px;" />
+					<a href="#document_srl_help" class="x_icon-question-sign" data-toggle>{$lang->help}</a>
+					<p id="document_srl_help" class="x_help-block" hidden>{$lang->md_about_document}</p>
 				</div>
 			</div>
 			<div class="x_clearfix btnArea">

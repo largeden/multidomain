@@ -30,6 +30,7 @@ class multidomainAdminController extends multidomain
 		$args->multidomain_srl = Context::get('multidomain_srl');
 		$args->domain = $oMultidomainModel->parseUri(Context::get('domain'));
 		$args->module_srl = Context::get('index_module_srl');
+		$args->document_srl = Context::get('index_document_srl');
 
 		$oMultidomainModel = &getModel('multidomain');
 		if($oMultidomainModel->getMultidomain($args))
@@ -134,6 +135,7 @@ class multidomainAdminController extends multidomain
 		if(!$output->toBool()) return $output;
 
 		$output = executeQuery('multidomain.updateMultidomain', $args);
+		debugPrint($output);
 		if(!$output->toBool()) {
 			$oDB->rollback();
 			return new Object(-1, "msg_error_occured");

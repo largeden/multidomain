@@ -16,6 +16,7 @@ var multidomain = xe.createApp('multidomainJS',
 						jQuery('#multidomain_insert').find('input[name=multidomain_srl]').val('');
 						jQuery('#multidomain_insert').find('input[name=domain]').val('');
 						jQuery('#multidomain_insert').find('input[name=index_module_srl]').val('');
+						jQuery('#multidomain_insert').find('input[name=index_document_srl]').val('');
 						jQuery('#multidomain_insert').find('input[readonly]').val('');
 					});
 
@@ -27,6 +28,7 @@ var multidomain = xe.createApp('multidomainJS',
 						jQuery('#multidomain_insert').find('input[name=multidomain_srl]').val(data['multidomain_srl']);
 						jQuery('#multidomain_insert').find('input[name=domain]').val(data['domain']);
 						jQuery('#multidomain_insert').find('input[name=index_module_srl]').val(data['module_srl']);
+						jQuery('#multidomain_insert').find('input[name=index_document_srl]').val(data['document_srl']);
 						jQuery('#multidomain_insert').find('input[readonly]').val(data['mid']);
 					});
 
@@ -50,6 +52,9 @@ var multidomain = xe.createApp('multidomainJS',
 			params['module_srl'] = jQuery(val).parent().parent().find('td[id*="module_srl_"]').attr('id');
 			params['module_srl'] = params['module_srl'].split('_');
 			params['module_srl'] = params['module_srl'][2];
+			params['document_srl'] = jQuery(val).parent().parent().find('td[id*="document_srl"]').attr('id');
+			params['document_srl'] = params['document_srl'].split('_');
+			params['document_srl'] = params['document_srl'][2];
 			params['domain'] = jQuery(val).parent().parent().find('.domain').text();
 			params['mid'] = jQuery(val).parent().parent().find('td[id*="module_srl_"]').text();
 

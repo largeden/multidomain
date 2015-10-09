@@ -25,7 +25,6 @@ class multidomainAdminModel extends multidomain
 		}
 
 		$oModuleModel = &getModel('module');
-
 		$output = executeQuery('multidomain.getMultidomainList', $args, $columnList);
 		if(!$output->toBool()||!$output->data) return;
 

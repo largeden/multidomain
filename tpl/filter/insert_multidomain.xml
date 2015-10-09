@@ -2,6 +2,7 @@
 	<form>
 		<node target="domain" required="true" maxlength="250" />
 		<node target="index_module_srl" required="true" filter="number" />
+		<node target="index_document_srl" required="true" filter="number" />
 	</form>
 	<parameter />
 	<response callback_func="md_complete">
