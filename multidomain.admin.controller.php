@@ -3,9 +3,9 @@
 /**
  * multidomainAdminController class
  * multidomain controller class of multidomain module
- * @author largeden (cbrghost@gmail.com)
+ * @author largeden (developer@romanesque.me)
  * @package /modules/multidomain
- * @version 1.3
+ * @version 1.4
  */
 class multidomainAdminController extends multidomain
 {
