@@ -5,7 +5,7 @@
  * multidomain model class of multidomain module
  * @author largeden (developer@romanesque.me)
  * @package /modules/multidomain
- * @version 1.4
+ * @version 1.4.1
  */
 class multidomainModel extends multidomain
 {
@@ -22,6 +22,9 @@ class multidomainModel extends multidomain
 	 */
 	function triggerMultidomainInit(&$module_info)
 	{
+		// SECISSUE(3e34fd0) 전체 post 요청에 대한 checkCSRF()의 대응 추가
+		$this->triggerMultidomain();
+
 		// Form return 처리에 도메인 이름까지 들어올 경우 '기본 URL 설정이 안 되어 있습니다.'라며 접속이 안되는 증상 회피기능 추가
 		if(Context::get('success_return_url') || Context::get('error_return_url'))
 		{

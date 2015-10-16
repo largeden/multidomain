@@ -7,8 +7,8 @@
 	</permissions>
 	<actions>
 		<action name="dispMultidomainAdminSetup" type="view" admin_index="true" menu_name="multidomain" menu_index="true" />
-		<action name="procMultidomainAdminInsert" type="controller" ruleset="insertMultidomain" />
-		<action name="procMultidomainAdminDelete" type="controller" ruleset="deleteMultidomain" />
+		<action name="procMultidomainAdminInsert" type="controller" ruleset="insertMultidomain" method="POST" />
+		<action name="procMultidomainAdminDelete" type="controller" ruleset="deleteMultidomain" method="POST" />
 	</actions>
 	<menus>
 		<menu name="multidomain" type="all">

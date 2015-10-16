@@ -3,6 +3,5 @@
 	<fields>
 		<field name="domain" required="true" length="1:250" />
 		<field name="index_module_srl" required="true" rule="number" />
-		<field name="index_document_srl" required="true" rule="number" />
 	</fields>
 </ruleset>

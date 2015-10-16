@@ -2,7 +2,7 @@
  * @file   modules/multidomain/tpl/js/common.js
  * @author largeden (developer@romanesque.me)
  * @brief  multidomain javascript
- * @version 1.4
+ * @version 1.4.1
  **/
 
 var multidomain = xe.createApp('multidomainJS',

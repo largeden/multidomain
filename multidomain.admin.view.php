@@ -5,7 +5,7 @@
  * multidomain view class of multidomain module
  * @author largeden (developer@romanesque.me)
  * @package /modules/multidomain
- * @version 1.4
+ * @version 1.4.1
  */
 class multidomainAdminView extends multidomain
 {
